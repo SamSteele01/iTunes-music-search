@@ -14,9 +14,11 @@ let list = document.querySelector('.results');
 let button = document.getElementById('button');
 let input = document.getElementById('search');
 button.addEventListener('click', fetchSearch );
-// input.addEventListener('keypress', function(e) {
-// // var key = e.which || e.keyCode;
-// if (e.keyCode === 13) {fetchSearch()}}, false);
+input.addEventListener('keypress', function(e) {
+// var key = e.which || e.keyCode;
+if (e.keyCode === 13) {
+  e.preventDefault();
+  fetchSearch()}});
 function fetchSearch() {
   console.log("Button press");
   let searchTerm = document.getElementById('search').value
